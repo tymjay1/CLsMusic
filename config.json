@@ -1,0 +1,27 @@
+{
+    "prefix": "!",
+    "token": "[Your discord bot token here]",
+    "clientId": "1250635633517662219",
+    "guildId": "1250950769293918342",
+    
+    "opt": {
+        "DJ": {
+            "enabled": false,
+            "roleName": "",
+            "commands": []
+        },
+        "Translate_Timeout": 10000,
+        "maxVol": 100,
+        "spotifyBridge": true,
+        "volume": 25,
+        "leaveOnEmpty": true,
+        "leaveOnEmptyCooldown": 30000,
+        "leaveOnEnd": true,
+        "leaveOnEndCooldown": 30000,
+        "discordPlayer": {
+            "ytdlOptions": {
+                "quality": "highestaudio"
+            }
+        }
+    }
+}
