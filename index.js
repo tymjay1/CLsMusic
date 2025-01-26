@@ -3,7 +3,7 @@ const path = require("node:path");
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const config = require('./config.json');
 const { Player } = require("discord-player");
-const { YouTubeExtractor } = require('@discord-player/extractor');
+const { YouTubeExtractor, DefaultExtractors } = require('@discord-player/extractor');
 
 // Create client
 const intents = [
@@ -17,8 +17,26 @@ client.config = require("./config.json");
 client.commands = new Collection();
 
 const player = new Player(client, client.config.opt.discodPlayer);
-player.extractors.loadDefault();
-//player.extractors.register(YouTubeExtractor);
+player.extractors.loadMulti(DefaultExtractors);
+// const youtubeExtractor = new YouTubeExtractor();
+// player.extractors.register(youtubeExtractor);
+
+// Handle player errors
+player.events.on("playerError", (queue, error) => {
+    console.error(`[PLAYER ERROR]: ${error.message}`);
+    if (queue.metadata?.channel) {
+        queue.metadata.channel.send({
+            content: `An error occurred while playing music: ${error.message}`,
+        }).catch(console.error);
+    }
+});
+
+player.events.on("error", (error) => {
+    console.error(`[ERROR]: ${error.message}`);
+});
+
+// Attach the player to the client for global access
+client.player = player;
 
 const foldersPath = path.join(__dirname, "commands");
 const commandFolders = fs.readdirSync(foldersPath);

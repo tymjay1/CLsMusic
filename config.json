@@ -1,6 +1,6 @@
 {
     "prefix": "!",
-    "token": "[Your discord bot token here]",
+    "token": "MTI1MDYzNTYzMzUxNzY2MjIxOQ.GUBB9D.3rPMlL94mdRo9zQe26xo6fDBEs6txenEXtTIq0",
     "clientId": "1250635633517662219",
     "guildId": "1250950769293918342",
     
@@ -13,7 +13,7 @@
         "Translate_Timeout": 10000,
         "maxVol": 100,
         "spotifyBridge": true,
-        "volume": 25,
+        "volume": 50,
         "leaveOnEmpty": true,
         "leaveOnEmptyCooldown": 30000,
         "leaveOnEnd": true,
