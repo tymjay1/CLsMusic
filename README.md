@@ -18,13 +18,14 @@ Bot commands:
 - /queue: Show the current queue
 
 Language used: JavaScript
+
 Frameworks: Node.js, discord.js, discord-player
 
 ## File System Structure
-
+```
 📁 commands
     📁 example
-        <!-- Include example commands for testing -->
+        # Include example commands for testing
     📁 utilities
         📄 help.js
         📄 play.js
@@ -34,7 +35,8 @@ Frameworks: Node.js, discord.js, discord-player
 📄 config.json
 📄 deployCommands.js
 📁 events
-    <!-- Deprecated events -->
+    # Deprecated events
 📄 index.js
 📄 package-lock.json
 📄 package.json
+```
